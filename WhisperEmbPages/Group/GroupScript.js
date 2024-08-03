@@ -5,6 +5,7 @@ const send = document.getElementById('send');
 const emojisCont = document.getElementById('emojisCont');
 const emojisBtn = document.getElementById('emojisBtn');
 
+const socket = io('https://whisper-listen-server.vercel.app/');
 const userData = {name: 'yassine'}
 // var userData = JSON.parse(localStorage.getItem('userData'));
 // if (!userData) {window.location.href = '../../Login.html';} 
@@ -133,8 +134,7 @@ function ConvertDateFormat(isoString) {
 //     else {document.body.style.backgroundImage = femaleBackgrounds[Math.floor(Math.random() * femaleBackgrounds.length)];}
 // }
 
-// const socket = io('https://whisper-listen-server.vercel.app/');
-// socket.emit('user-connected', userData.name);
-// socket.on('recieve-chat-message', messageObj => {CreateOthersMessage(messageObj.message, messageObj.sender, messageObj.timestamp);});
-// socket.on('recieve-user-connected', user => {CreateJoinMessage(user, 'connected');});
-// socket.on('recieve-user-disconnected', user => {CreateJoinMessage(user, 'disconnected');});
+socket.emit('user-connected', userData.name);
+socket.on('recieve-chat-message', messageObj => {CreateOthersMessage(messageObj.message, messageObj.sender, messageObj.timestamp);});
+socket.on('recieve-user-connected', user => {CreateJoinMessage(user, 'connected');});
+socket.on('recieve-user-disconnected', user => {CreateJoinMessage(user, 'disconnected');});
