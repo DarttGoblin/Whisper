@@ -128,7 +128,7 @@
  }
 #convBody::-webkit-scrollbar {width: 10px; margin-left: 10px;}
 #convBody::-webkit-scrollbar-track {visibility: hidden;}
-#convBody::-webkit-scrollbar-thumb {background-color: rgba(200, 200, 200, 0.6);}
+#convBody::-webkit-scrollbar-thumb {visibility: hidden;}
 #convDiv {
     padding: 20px 0px 10px 0px;
     height: 600px;
@@ -137,7 +137,6 @@
     border: 3px solid white;
     border-radius: 30px;
     backdrop-filter: blur(20px);
-    margin-bottom: 100px;
 }
 body {
     background-image: url('../../WhisperMedia/home_female_background_gifs/back1.gif');
@@ -165,4 +164,13 @@ body {
     .join {font-size: 10px;}
     .userTiming, .othersTiming {font-size: 5px; margin: 2px 0px;}
     .userTiming {margin-right: 20px;}
+}
+@media only screen and (max-width: 500px) {
+    .othersMessage, .userMessage {border-radius: 20px;}
+    .userMessage {margin-right: 10px;}
+    #convDiv {width: 99%; padding: 5px 0px;}
+    #convBody {width: 100%; height: 87%; margin-bottom: 10px;}
+    #send {margin-left: 0px;}
+    #emojisBtn {margin-right: 0px;}
+    #input {width: 80%;}
 }
