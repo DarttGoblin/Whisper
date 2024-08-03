@@ -1,0 +1,95 @@
+ /* #logout {cursor: pointer;}
+#convBody {
+    text-align: left;
+    margin: 10px 0px 0px 0px;
+    height: 400px;
+    width: 400px;
+    border: 2px solid black;
+    overflow-y: auto;
+}
+#convDiv {
+    margin: 100px 0px 0px 0px;
+    height: 500px;
+    width: 500px;
+    border: 2px solid black;
+} */
+
+
+
+
+
+
+
+
+#welcomePCont {
+    color: white;
+    text-align: left;
+    font-family: var(--fontFamily);
+    border: 1px solid white;
+    display: flex;
+    float: left;
+    padding: 30px;
+    margin: 150px 0px 0px 0px;
+    max-width: 90%;
+    line-height: 30px;
+}
+#signout {
+    height: 50px;
+    width: 180px;
+    font-size: 15px;
+    font-family: var(--fontFamily);
+    background: none;
+    color: white;
+    border: 3px solid white;
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    cursor: pointer;
+}
+#navLinksCont {
+    float: right;
+    margin: 50px 50px 0px 0px;
+}
+.navLinks {
+    font-family: var(--fontFamily);
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    margin: 0px 20px;
+}
+#logoCont {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    float: left;
+    margin: 30px;
+}
+hr {
+    height: 5px;
+    width: 50px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px;
+}
+#setDiv {
+    cursor: pointer;
+    margin: 20px;
+    display: none;
+    flex-direction: column;
+    float: right;
+}
+nav {
+    display: flex;
+}
+body {
+    background-image: url('../../WhisperMedia/home_female_background_gifs/back1.gif');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 0px -380px;
+    background-size: cover;
+    background-color: black;
+    font-family: var(--fontFamily);
+}
+:root {
+    --fontFamily: 'Press Start 2P', cursive;
+    --fontColor: rgb(116, 16, 98);
+}

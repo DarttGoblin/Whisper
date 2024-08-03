@@ -1,0 +1,168 @@
+.join {
+    font-size: 15px;
+    font-family: var(--fontFamily);
+    color: rgb(200, 200, 200);;
+    align-self: center;
+    display: flex;
+    margin: 5px 0px;
+}
+.userSpan {
+    color: rgb(0, 255, 0);
+    display: flex;
+    margin-right: 20px;
+}
+.userTiming, .othersTiming {
+    font-size: 10px;
+    color: rgb(200, 200, 200);
+    font-family: var(--fontFamily);
+    display: flex;
+    align-self: flex-start;
+    margin: 5px 0px;
+}
+.userTiming {
+    margin-right: 20px;
+    align-self: flex-end;
+}
+.emoji {
+    margin: 5px;
+    cursor: pointer;
+}
+#textAreaDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#emojisCont {
+    border: 3px solid white;
+    height: 200px;
+    width: 75%;
+    border-radius: 30px;
+    margin: -320px 0px 0px 0px;
+    backdrop-filter: blur(30px);
+    padding: 20px;
+    font-size: 35px;
+    overflow-y: auto;
+    display: none;
+    user-select: none;
+}
+#emojisCont::-webkit-scrollbar {width: 10px; margin-left: 10px;}
+#emojisCont::-webkit-scrollbar-track {visibility: hidden;}
+#emojisCont::-webkit-scrollbar-thumb {visibility: hidden;}
+#emojisBtn {
+    font-size: 35px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+    margin: 0px 10px 0px 15px;
+}
+.others {
+    font-family: var(--fontFamily);
+    color: rgb(200, 200, 200);
+    font-size: 13px;
+    display: flex;
+    margin: 5px 0px;
+}
+.othersMessage, .userMessage {
+    width: fit-content;
+    max-width: 60%;
+    height: fit-content;
+    padding: 18px 23px;
+    color: black;
+    font-family: var(--fontFamily);
+    font-size: 16px;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.othersMessage {
+    border-radius: 30px;
+    border-top-left-radius: 0px;
+    color: black;
+    background-color: rgb(200, 200, 200);
+    align-self: flex-start;
+    margin: 5px 0px 5px 15px;
+}
+.userMessage {
+    border-radius: 30px;
+    border-top-right-radius: 0px;
+    display: flex;
+    color: white;
+    background-color: var(--fontColor); 
+    margin: 5px 15px 5px 0px;
+    align-self: flex-end;
+}
+#send {
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0px 15px 0px 10px;
+}
+#input {
+    margin: 0px 5px;
+    padding: 0px 20px;
+    height: 50px;
+    width: 75%;
+    min-width: none;
+    border-radius: 30px;
+    border: 3px solid white;
+    background: none;
+    font-size: 18px;
+    color: white;
+    font-family: var(--fontFamily);
+    outline: none;
+}
+#input::placeholder {color: rgb(180, 180, 180);}
+#convBody {
+    margin-bottom: 20px;
+    text-align: left;
+    height: 85%;
+    width: 99%;
+    border-radius: 0px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+ }
+#convBody::-webkit-scrollbar {width: 10px; margin-left: 10px;}
+#convBody::-webkit-scrollbar-track {visibility: hidden;}
+#convBody::-webkit-scrollbar-thumb {background-color: rgba(200, 200, 200, 0.6);}
+#convDiv {
+    padding: 20px 0px 10px 0px;
+    height: 600px;
+    max-height: 80%;
+    width: min(1000px, 90%);
+    border: 3px solid white;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    margin-bottom: 100px;
+}
+body {
+    background-image: url('../../WhisperMedia/home_female_background_gifs/back1.gif');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 0px -320px;
+    background-size: cover;
+    background-color: black;
+    font-family: var(--fontFamily);
+}
+:root {
+    --fontFamily: 'Press Start 2P', cursive;
+    --fontColor: rgb(116, 16, 98);
+}
+
+@media only screen and (max-width: 800px) {
+    #convDiv {height: 400px; padding-bottom: 10px;}
+    #input {font-size: 10px; height: 35px;border: 2px; border: 1px solid white;}
+    #emojisBtn {font-size: 20px;}
+    #send {font-size: 20px;}
+    #emojisCont {font-size: 20px; height: 140px; margin: -230px; border: 1px solid white;}
+    .others {font-size: 8px;}
+    .othersMessage, .userMessage {font-size: 12px; padding: 5px 15px; line-height: 20px;}
+    #convBody {width: 95%;}
+    .join {font-size: 10px;}
+    .userTiming, .othersTiming {font-size: 5px; margin: 2px 0px;}
+    .userTiming {margin-right: 20px;}
+}

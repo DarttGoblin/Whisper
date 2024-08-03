@@ -1,0 +1,113 @@
+#haveacc {
+    font-family: var(--fontFamily);
+    font-size: 12px;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#register {
+    height: 50px;
+    width: 300px;
+    font-size: 18px;
+    background-color: var(--fontColor);
+    border: none;
+    cursor: pointer;
+    font-family: var(--fontFamily);
+    border-radius: 20px;
+    color: white;
+    margin: 50px 0px 20px 0px;
+}
+#register:active {transform: scale(0.9);}
+option {background-color: black;}
+select {
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+    cursor: pointer;
+    color: white;
+    width: 200px;
+    font-family: var(--fontFamily);
+    font-size: 13px;
+    padding: 10px 5px;
+    outline: none;
+    margin: 20px 0px 0px 0px;
+}
+.inputs {
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    background: none;
+    font-size: 15px;
+    width: 400px;
+    margin: 5px;
+    height: 30px;
+    outline: none;
+    font-family: var(--fontFamily);
+}
+#registerCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border: 5px dashed var(--fontColor);
+    margin: 100px 150px;
+    padding: 50px 30px;
+    float: right;
+    border-radius: 50px;
+}
+body {
+    background-image: url('../../WhisperMedia/register_background.gif');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 20px 100px;
+    background-size: 60%;
+    background-color: black;
+    font-family: var(--fontFamily);
+}
+:root {
+    --fontFamily: 'Press Start 2P', cursive;
+    --fontColor: rgb(116, 16, 98);
+}
+@media only screen and (max-width: 1700px) {
+    body {
+        background-size: 100%;
+        background-position: -50px 0px;
+    }
+    #registerCont {
+        backdrop-filter: blur(20px);
+        float: none;
+        margin: 50px 20px;
+        background-color: rgb(0, 0, 0, 0.5);
+    }
+}
+@media only screen and (max-width: 1200px) {
+    body {
+        background-size: 120%;
+        background-position: -50px 0px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    body {
+        background-size: 150%;
+        background-position: -50px 0px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    body {
+        background-size: 200%;
+        background-position: -150px 0px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    body {
+        background-size: 250%;
+        background-position: -250px 0px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    body {
+        background-size: 400%;
+        background-position: -400px 0px;
+    }
+}
