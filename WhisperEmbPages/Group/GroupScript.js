@@ -5,7 +5,10 @@ const send = document.getElementById('send');
 const emojisCont = document.getElementById('emojisCont');
 const emojisBtn = document.getElementById('emojisBtn');
 
-const socket = io('https://whisper-listen-server.vercel.app/');
+const socket = io('https://whisper-listen-server.vercel.app', {
+    transports: ['websocket'],
+    upgrade: false
+});
 const userData = {name: 'yassine'}
 // var userData = JSON.parse(localStorage.getItem('userData'));
 // if (!userData) {window.location.href = '../../Login.html';} 
