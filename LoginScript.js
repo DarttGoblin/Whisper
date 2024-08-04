@@ -19,11 +19,11 @@ submit.onclick = function() {
         if (data.success) {
             userData = data.userData;
             localStorage.setItem('userData', JSON.stringify(userData));
-            window.location.href = 'WhisperEmbPages/Home/Home.html';
+            window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Home/Home.html';
         }
         else {alert(data.error);}
     })
     .catch(error => {console.log(error);});
 }
 
-register.onclick = function() {window.location.href = 'WhisperEmbPages/Register/Register.html';}
+register.onclick = function() {window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Register/Register.html';}
