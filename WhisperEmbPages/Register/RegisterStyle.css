@@ -86,3 +86,17 @@ body {
         background-color: rgb(0, 0, 0, 0.5);
     }
 }
+@media only screen and (max-width: 600px) {
+    #registerCont {width: 80%; margin: 50px 0px;}
+    .inputs {
+        width: 90%;
+        font-size: 12px;
+        padding: 0px;
+        margin: 0px;
+    }
+    #register {
+        width: 80%;
+        font-size: 15px;
+    }
+    #haveacc {font-size: 12px;}
+}
