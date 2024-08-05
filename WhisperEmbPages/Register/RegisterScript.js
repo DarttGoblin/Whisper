@@ -31,8 +31,8 @@ register.onclick = function() {
             register.innerHTML = 'Register';
         }
         else {
-            alert(data.error);
             console.log(data.error);
+            alert("An error has occured during the registration!");
             register.innerHTML = 'Register';
         }
     })
