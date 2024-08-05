@@ -5,7 +5,7 @@ const send = document.getElementById('send');
 const emojisCont = document.getElementById('emojisCont');
 const emojisBtn = document.getElementById('emojisBtn');
 
-const socket = io('https://whisper-listen-server.vercel.app', {
+const socket = io('https://lovely-scented-wrench.glitch.me', {
     transports: ['websocket'],
     upgrade: false
 });
