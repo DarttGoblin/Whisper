@@ -139,5 +139,5 @@ function ConvertDateFormat(isoString) {
 
 socket.emit('user-connected', userData.name);
 socket.on('recieve-chat-message', messageObj => {CreateOthersMessage(messageObj.message, messageObj.sender, messageObj.timestamp);});
-socket.on('recieve-user-connected', user => {CreateJoinMessage(user, 'connected');});
+socket.on('recieve-user-connected', user => {setTimeout(() => {CreateJoinMessage(user, 'connected');}, 500)});
 socket.on('recieve-user-disconnected', user => {CreateJoinMessage(user, 'disconnected');});
