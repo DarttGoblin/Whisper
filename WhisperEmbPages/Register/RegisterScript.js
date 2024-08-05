@@ -18,7 +18,7 @@ register.onclick = function() {
     }
 
     register.innerHTML = 'Registring...';
-    fetch('http://localhost:7005', {
+    fetch('https://whisper-register-server.vercel.app/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({userData})
@@ -27,7 +27,7 @@ register.onclick = function() {
     .then(data => {
         if (data.success) {
             alert('Registration has been successful!');
-            window.location.href = '../../Login.html';
+            window.location.href = 'https://darttgoblin.github.io/Whisper/Login.html';
             register.innerHTML = 'Register';
         }
         else {
