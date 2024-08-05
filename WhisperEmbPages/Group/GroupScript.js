@@ -39,7 +39,7 @@ function Send() {
     if (messageObj.message == '') {return;}
     CreateUserMessage(messageObj.message, messageObj.timestamp);
     socket.emit('send-chat-message', messageObj);
-    fetch('http://localhost:7001', {
+    fetch('https://whisper-savechat-server.vercel.app/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({messageObj})
