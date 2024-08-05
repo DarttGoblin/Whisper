@@ -9,9 +9,9 @@ const socket = io('https://whisper-listen-server.vercel.app', {
     transports: ['websocket'],
     upgrade: false
 });
-const userData = {name: 'yassine'}
-// var userData = JSON.parse(localStorage.getItem('userData'));
-// if (!userData) {window.location.href = '../../Login.html';} 
+
+var userData = JSON.parse(localStorage.getItem('userData'));
+if (!userData) {window.location.href = '../../Login.html';} 
 
 for (let i = 0; i < emojis.length; i++) {
     const emoji = document.createElement('span');
