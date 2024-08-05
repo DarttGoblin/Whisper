@@ -22,7 +22,7 @@ for (let i = 0; i < emojis.length; i++) {
 }
 
 // ChangeBackground(userData.gender);
-// FetchOldMessage();
+FetchOldMessage();
 
 emojisBtn.onclick = function() {emojisCont.style.display = 'block';}
 convBody.onclick = function() {emojisCont.style.display = 'none';}
@@ -92,7 +92,7 @@ function CreateJoinMessage(user, state) {
     convBody.scrollTop = convBody.scrollHeight;
 }
 function FetchOldMessage() {
-    fetch('http://localhost:7000', {
+    fetch('https://whisper-history-server.vercel.app/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
     })
