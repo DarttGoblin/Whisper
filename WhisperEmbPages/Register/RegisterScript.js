@@ -61,7 +61,7 @@ function AccessDenial(message) {
     accessDenial.style.opacity = 1;
     accessDenial.style.top = "-50px";
     setTimeout(() => {
-        submit.style.visibility = "visible";
+        register.style.visibility = "visible";
         accessDenial.style.visibility = "hidden";
         accessDenial.style.opacity = 0;
         accessDenial.style.top = "0px";
