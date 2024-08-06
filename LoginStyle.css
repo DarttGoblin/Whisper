@@ -14,11 +14,11 @@
     font-family: var(--fontFamily);
     font-weight: 800;
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     position: relative;
-    top: -30px;
-    visibility: 0;
-    opacity: 0;
+    top: 10px;
+    /* visibility: 0; */
+    /* opacity: 0; */
     transition: opacity 0.3s, top 0.3s;
     user-select: none;
 }
@@ -90,8 +90,8 @@ body {
 
 @media only screen and (max-width: 600px) {
     #accSpan {font-size: 10px;}
-    #submit {font-size: 10px;}
-    #accessDenial {font-size: 10px; margin-bottom: 30px;}
+    #submit {font-size: 10px; height: 35px;}
+    #accessDenial {font-size: 10px; margin-bottom: 10px;}
     input {font-size: 12px; padding: 5px;}
     #loginLogo {height: 100px; width: 100px; margin-bottom: 50px;}
     #loginCont {margin-top: 50px; height: 400px;}
