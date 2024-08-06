@@ -3,6 +3,8 @@ const select = document.getElementsByTagName("select")[0];
 const register = document.getElementById("register");
 const haveacc = document.getElementById("haveacc");
 
+for (let i = 0; i < inputs.length; i++) {inputs[i].oninput = function() {inputs[i].value = inputs[i].value.charAt(0).toLowerCase() + inputs[i].value.slice(1);}}
+
 haveacc.onclick = function() {window.location.href = '../../Login.html';}
 register.onclick = function() {
     for (var i = 0; i < inputs.length; i++) {if (inputs[i].value == '') {DisplayError(inputs[i].id); return;}}
@@ -31,8 +33,7 @@ register.onclick = function() {
             register.innerHTML = 'Register';
         }
         else {
-            console.log(data.error);
-            alert("An error has occured during the registration!");
+            alert(data.error);
             register.innerHTML = 'Register';
         }
     })
