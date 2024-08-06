@@ -5,6 +5,11 @@ const haveacc = document.getElementById("haveacc");
 const accessDenial = document.getElementById('accessDenial');
 
 for (let i = 0; i < inputs.length; i++) {inputs[i].oninput = function() {inputs[i].value = inputs[i].value.charAt(0).toLowerCase() + inputs[i].value.slice(1);}}
+inputs[inputs.length - 1].oninput = function() {
+    if (inputs[inputs.length - 1].value == inputs[inputs.length - 2].value) {inputs[inputs.length - 1].style.borderBottom = '2px solid green';} 
+    else {inputs[inputs.length - 1].style.borderBottom = '2px solid red';}
+}
+inputs[inputs.length - 2].oninput = function() {inputs[inputs.length - 1].style.borderBottom = '2px solid white';}
 
 haveacc.onclick = function() {window.location.href = '../../Login.html';}
 register.onclick = function() {
@@ -30,7 +35,7 @@ register.onclick = function() {
     .then(data => {
         if (data.success) {
             alert('Registration has been successful!');
-            window.location.href = '../../Login.html';
+            window.location.href = 'https://darttgoblin.github.io/Whisper/Login.html';
             register.innerHTML = 'Register';
         }
         else {
@@ -50,20 +55,21 @@ function DisplayError(error) {
     else if (error == 'email') {AccessDenial('Email is required');}
     else if (error == 'username') {AccessDenial('username is required');}
     else if (error == 'password') {AccessDenial('password is required!');}
-    else if (error == 'cpassword') {AccessDenial('password confirmation is required!');}
+    else if (error == 'cpassword') {AccessDenial('password confirmation<br>is required!');}
     else if (error == 'gender') {AccessDenial('Gender is required!');}
-    else if (error == 'notmatched') {AccessDenial('Passwords are not matched!');}
+    else if (error == 'notmatched') {AccessDenial('Passwords are<br>not matched!');}
 }
 function AccessDenial(message) {
     accessDenial.innerHTML = message;
     register.style.visibility = "hidden";
     accessDenial.style.visibility = "visible";
     accessDenial.style.opacity = 1;
-    accessDenial.style.top = "-10px";
+    accessDenial.style.top = "-30px";
     setTimeout(() => {
         register.style.visibility = "visible";
         accessDenial.style.visibility = "hidden";
         accessDenial.style.opacity = 0;
         accessDenial.style.top = "0px";
+        accessDenial.innerHTML = 'Access Denied';
     }, 3000);
 }
