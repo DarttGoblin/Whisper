@@ -2,8 +2,9 @@ const submit = document.getElementById("submit");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const register = document.getElementById("register");
+const accessDenial = document.getElementById("accessDenial");
 
-register.onclick = function() {window.location.href = 'WhisperEmbPages/Register/Register.html';}
+register.onclick = function() {window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Register/Register.html';}
 submit.onclick = function() {
     const usernameValue = username.value;
     const passwordValue = password.value;
@@ -22,7 +23,7 @@ submit.onclick = function() {
             submit.innerHTML = 'Sign in';
             userData = data.userData;
             localStorage.setItem('userData', JSON.stringify(userData));
-            window.location.href = 'WhisperEmbPages/Home/Home.html';
+            window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Home/Home.html';
         }
         else {
             submit.innerHTML = 'Sign in';
@@ -31,7 +32,7 @@ submit.onclick = function() {
     })
     .catch(error => {
         submit.innerHTML = 'Sign in';
-        AccessDenial("Oops! An error has been occured.");
+        AccessDenial("Oops! An error occured.");
         console.log(error);
     });
 }
@@ -41,11 +42,11 @@ function AccessDenial(message) {
     submit.style.visibility = "hidden";
     accessDenial.style.visibility = "visible";
     accessDenial.style.opacity = 1;
-    accessDenial.style.top = "-10px";
+    accessDenial.style.top = "-30px";
     setTimeout(() => {
         submit.style.visibility = "visible";
         accessDenial.style.visibility = "hidden";
         accessDenial.style.opacity = 0;
-        accessDenial.style.top = "0px";
+        accessDenial.style.top = "10px";
     }, 3000);
 }
