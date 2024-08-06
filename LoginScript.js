@@ -3,6 +3,7 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const register = document.getElementById("register");
 
+register.onclick = function() {window.location.href = 'WhisperEmbPages/Register/Register.html';}
 submit.onclick = function() {
     const usernameValue = username.value;
     const passwordValue = password.value;
@@ -15,7 +16,7 @@ submit.onclick = function() {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({usernameValue, passwordValue})
     })
-    .then(response => response.json())
+        .then(response => response.json())
     .then(data => {
         if (data.success) {
             submit.innerHTML = 'Sign in';
@@ -25,7 +26,7 @@ submit.onclick = function() {
         }
         else {
             submit.innerHTML = 'Sign in';
-            alert(data.error);
+            AccessDenial(data.error);
         }
     })
     .catch(error => {
@@ -35,4 +36,16 @@ submit.onclick = function() {
     });
 }
 
-register.onclick = function() {window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Register/Register.html';}
+function AccessDenial(message) {
+    accessDenial.innerHTML = message;
+    submit.style.visibility = "hidden";
+    accessDenial.style.visibility = "visible";
+    accessDenial.style.opacity = 1;
+    accessDenial.style.top = "-40px";
+    setTimeout(() => {
+        submit.style.visibility = "visible";
+        accessDenial.style.visibility = "hidden";
+        accessDenial.style.opacity = 0;
+        accessDenial.style.top = "0px";
+    }, 3000);
+}
