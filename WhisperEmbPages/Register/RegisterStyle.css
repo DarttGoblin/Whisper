@@ -5,6 +5,20 @@
     text-decoration: underline;
     cursor: pointer;
 }
+#accessDenial {
+    font-size: 18px;
+    color: rgb(200, 0, 0);
+    font-family: var(--fontFamily);
+    font-weight: 800;
+    display: flex;
+    margin-bottom: 50px;
+    position: relative;
+    top: 0px;
+    visibility: 0;
+    opacity: 0;
+    transition: opacity 0.3s, top 0.3s;
+    user-select: none;
+}
 #register {
     height: 50px;
     width: 300px;
@@ -96,7 +110,8 @@ body {
     }
     #register {
         width: 80%;
-        font-size: 12px;
+        font-size: 15px;
     }
+    #accessDenial {font-size: 15px;}
     #haveacc {font-size: 12px;}
 }
