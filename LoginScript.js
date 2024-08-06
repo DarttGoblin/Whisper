@@ -31,7 +31,7 @@ submit.onclick = function() {
     })
     .catch(error => {
         submit.innerHTML = 'Sign in';
-        alert("Oops! An error has been occured.");
+        AccessDenial("Oops! An error has been occured.");
         console.log(error);
     });
 }
