@@ -3,13 +3,13 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const register = document.getElementById("register");
 
-submit.innerHTML = 'Signing in...';
 submit.onclick = function() {
     const usernameValue = username.value;
     const passwordValue = password.value;
 
     if (usernameValue == '' || passwordValue == '') {return;}
 
+    submit.innerHTML = 'Signing in...';
     fetch('https://whisper-login-server.vercel.app/', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
