@@ -15,7 +15,7 @@
     font-family: var(--fontFamily);
     border-radius: 20px;
     color: white;
-    margin: 50px 0px 20px 0px;
+    margin: 30px 0px 20px 0px;
 }
 #register:active {transform: scale(0.9);}
 option {background-color: black;}
