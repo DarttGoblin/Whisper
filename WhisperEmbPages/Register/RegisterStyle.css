@@ -10,8 +10,6 @@
     color: rgb(200, 0, 0);
     font-family: var(--fontFamily);
     font-weight: 800;
-    display: flex;
-    margin-bottom: 50px;
     position: relative;
     top: 0px;
     visibility: 0;
