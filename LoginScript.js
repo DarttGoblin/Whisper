@@ -3,6 +3,7 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const register = document.getElementById("register");
 
+submit.innerHTML = 'Signing in...';
 submit.onclick = function() {
     const usernameValue = username.value;
     const passwordValue = password.value;
@@ -17,13 +18,21 @@ submit.onclick = function() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
+            submit.innerHTML = 'Sign in';
             userData = data.userData;
             localStorage.setItem('userData', JSON.stringify(userData));
-            window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Home/Home.html';
+            window.location.href = 'WhisperEmbPages/Home/Home.html';
         }
-        else {alert(data.error);}
+        else {
+            submit.innerHTML = 'Sign in';
+            alert(data.error);
+        }
     })
-    .catch(error => {console.log(error);});
+    .catch(error => {
+        submit.innerHTML = 'Sign in';
+        alert("Oops! An error has been occured.");
+        console.log(error);
+    });
 }
 
 register.onclick = function() {window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Register/Register.html';}
