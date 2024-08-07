@@ -185,12 +185,13 @@ body {
     #emojisBtn {font-size: 20px;}
     #send {font-size: 20px;}
     #emojisCont {font-size: 20px; height: 140px; margin: -230px; border: 1px solid white;}
-    .others {font-size: 5px;}
-    .othersMessage, .userMessage {font-size: 12px; padding: 5px 15px; line-height: 20px;}
+    .others {font-size: 5px; margin: 2px 0px;}
+    .othersMessage {font-size: 12px; padding: 5px 15px; line-height: 20px; margin-left: 0px;}
+    .userMessage {font-size: 12px; padding: 5px 15px; line-height: 20px; margin-right: 0px;}
     #convBody {width: 95%;}
     .join {font-size: 10px;}
-    .userTiming, .othersTiming {font-size: 5px; margin: 2px 15px;}
-    .userTiming {margin-right: 15px;}
+    .othersTiming {font-size: 5px; margin: 2px 0px;}
+    .userTiming {font-size: 5px; margin: 2px 0px;}
 }
 @media only screen and (max-width: 500px) {
     .gear {font-size: 40px;}
