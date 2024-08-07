@@ -30,10 +30,21 @@ function LoadingConversation() {
     convBody.appendChild(loadingCont);
 }
 function CreateUserMessage(messageContent, messageTimestamp) {
+    const currentDate = new Date();
+    const messageDate = new Date(messageTimestamp);
+    
+    let displayTimestamp;
+    if (currentDate.getFullYear() === messageDate.getFullYear() &&
+        currentDate.getMonth() === messageDate.getMonth() &&
+        currentDate.getDate() === messageDate.getDate()) {
+        displayTimestamp = `${String(messageDate.getHours()).padStart(2, '0')}:${String(messageDate.getMinutes()).padStart(2, '0')}`;
+    }
+    else {displayTimestamp = `${messageDate.getFullYear()}-${String(messageDate.getMonth() + 1).padStart(2, '0')}-${String(messageDate.getDate()).padStart(2, '0')} ${String(messageDate.getHours()).padStart(2, '0')}:${String(messageDate.getMinutes()).padStart(2, '0')}`;}
+    
     const message = document.createElement('span');
     const timestamp = document.createElement('span');
     message.innerHTML = messageContent;
-    timestamp.innerHTML = messageTimestamp;
+    timestamp.innerHTML = displayTimestamp;
     message.classList.add('userMessage');
     timestamp.classList.add('userTiming');
     convBody.appendChild(message);
@@ -42,12 +53,24 @@ function CreateUserMessage(messageContent, messageTimestamp) {
     input.value = '';
 }
 function CreateOthersMessage(messageContent, messageSender, messageTimestamp) {
+    const currentDate = new Date();
+    const messageDate = new Date(messageTimestamp);
+    
+    let displayTimestamp;
+    if (currentDate.getFullYear() === messageDate.getFullYear() &&
+        currentDate.getMonth() === messageDate.getMonth() &&
+        currentDate.getDate() === messageDate.getDate()) {
+        displayTimestamp = `${String(messageDate.getHours()).padStart(2, '0')}:${String(messageDate.getMinutes()).padStart(2, '0')}`;
+    } else {
+        displayTimestamp = `${messageDate.getFullYear()}-${String(messageDate.getMonth() + 1).padStart(2, '0')}-${String(messageDate.getDate()).padStart(2, '0')} ${String(messageDate.getHours()).padStart(2, '0')}:${String(messageDate.getMinutes()).padStart(2, '0')}`;
+    }
+    
     const sender = document.createElement('span');
     const message = document.createElement('span');
     const timestamp = document.createElement('span');
     sender.innerHTML = messageSender;
     message.innerHTML = messageContent;
-    timestamp.innerHTML = messageTimestamp;
+    timestamp.innerHTML = displayTimestamp;
     sender.classList.add('others');
     message.classList.add('othersMessage');
     timestamp.classList.add('othersTiming');
@@ -91,7 +114,7 @@ function GetCurrentTimestamp() {
     const currentDate = new Date();
     
     const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
     const day = String(currentDate.getDate()).padStart(2, '0');
     const hours = String(currentDate.getHours()).padStart(2, '0');
     const minutes = String(currentDate.getMinutes()).padStart(2, '0');
@@ -100,7 +123,6 @@ function GetCurrentTimestamp() {
 }
 function ConvertDateFormat(isoString) {
     const date = new Date(isoString);
-    const currentDate = new Date();
     
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -108,12 +130,7 @@ function ConvertDateFormat(isoString) {
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
     
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = String(currentDate.getMonth() + 1).padStart(2, '0');
-    const currentDay = String(currentDate.getDate()).padStart(2, '0');
-    
-    if (year === currentYear && month === currentMonth && day === currentDay) {return `${hours}:${minutes}`;}
-    else {return `${year}-${month}-${day} ${hours}:${minutes}`;}
+    return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 function ChangeBackground(gender) {
     if (gender == 'male') {document.body.style.backgroundImage = maleBackgrounds[Math.floor(Math.random() * maleBackgrounds.length)];}
