@@ -35,7 +35,7 @@ register.onclick = function() {
     .then(data => {
         if (data.success) {
             alert('Registration has been successful!');
-            window.location.href = 'https://darttgoblin.github.io/Whisper/Login.html';
+            window.location.href = '../../Login.html';
             register.innerHTML = 'Register';
         }
         else {
