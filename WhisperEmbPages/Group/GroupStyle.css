@@ -93,6 +93,7 @@
     margin: 2px 0px 0px 15px;
 }
 .othersMessage, .userMessage {
+    line-height: 20px
     width: fit-content;
     max-width: 60%;
     height: fit-content;
