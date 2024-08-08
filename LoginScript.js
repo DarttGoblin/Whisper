@@ -4,7 +4,7 @@ const password = document.getElementById("password");
 const register = document.getElementById("register");
 const accessDenial = document.getElementById("accessDenial");
 
-register.onclick = function() {window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Register/Register.html';}
+register.onclick = function() {window.location.href = 'WhisperEmbPages/Register/Register.html';}
 submit.onclick = function() {
     const usernameValue = username.value;
     const passwordValue = password.value;
@@ -23,7 +23,7 @@ submit.onclick = function() {
             submit.innerHTML = 'Sign in';
             userData = data.userData;
             localStorage.setItem('userData', JSON.stringify(userData));
-            window.location.href = 'https://darttgoblin.github.io/Whisper/WhisperEmbPages/Home/Home.html';
+            window.location.href = 'WhisperEmbPages/Home/Home.html';
         }
         else {
             submit.innerHTML = 'Sign in';
