@@ -5,20 +5,33 @@ const send = document.getElementById('send');
 const emojisCont = document.getElementById('emojisCont');
 const emojisBtn = document.getElementById('emojisBtn');
 
-var userData = JSON.parse(localStorage.getItem('userData'));
-if (!userData) {window.location.href = '../../Login.html';} 
-
 const socket = io('https://lovely-scented-wrench.glitch.me', {
     transports: ['websocket'],
     upgrade: false
 });
+
+const userData = {name: 'yassine'}
+// var userData = JSON.parse(localStorage.getItem('userData'));
+// if (!userData) {window.location.href = '../../Login.html';} 
+
 
 emojisBtn.onclick = function() {emojisCont.style.display = 'block';}
 convBody.onclick = function() {emojisCont.style.display = 'none';}
 input.onclick = function() {emojisCont.style.display = 'none';}
 input.onkeydown = function(event) {if (event.key == 'Enter') {Send();}}
 send.onclick = Send;
+
+function GetCurrentTimestamp() {
+    const currentDate = new Date();
     
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const hours = String(currentDate.getHours()).padStart(2, '0');
+    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+    
+    return `${year}-${month}-${day} ${hours}:${minutes}`;
+}
 function Send() {
     const messageObj = {
         message: input.value,
