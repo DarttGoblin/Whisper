@@ -10,10 +10,8 @@ const socket = io('https://lovely-scented-wrench.glitch.me', {
     upgrade: false
 });
 
-const userData = {name: 'yassine'}
-// var userData = JSON.parse(localStorage.getItem('userData'));
-// if (!userData) {window.location.href = '../../Login.html';} 
-
+var userData = JSON.parse(localStorage.getItem('userData'));
+if (!userData) {window.location.href = '../../Login.html';} 
 
 emojisBtn.onclick = function() {emojisCont.style.display = 'block';}
 convBody.onclick = function() {emojisCont.style.display = 'none';}
