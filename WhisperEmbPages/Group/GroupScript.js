@@ -5,15 +5,13 @@ const send = document.getElementById('send');
 const emojisCont = document.getElementById('emojisCont');
 const emojisBtn = document.getElementById('emojisBtn');
 
+var userData = JSON.parse(localStorage.getItem('userData'));
+if (!userData) {window.location.href = '../../Login.html';} 
+
 const socket = io('https://lovely-scented-wrench.glitch.me', {
     transports: ['websocket'],
     upgrade: false
 });
-
-const userData = {name: 'yassine'}
-// var userData = JSON.parse(localStorage.getItem('userData'));
-// if (!userData) {window.location.href = '../../Login.html';} 
-
 
 emojisBtn.onclick = function() {emojisCont.style.display = 'block';}
 convBody.onclick = function() {emojisCont.style.display = 'none';}
