@@ -10,8 +10,9 @@ const socket = io('https://lovely-scented-wrench.glitch.me', {
     upgrade: false
 });
 
-var userData = JSON.parse(localStorage.getItem('userData'));
-if (!userData) {window.location.href = '../../Login.html';} 
+const userData = {name: 'yassine'}
+// var userData = JSON.parse(localStorage.getItem('userData'));
+// if (!userData) {window.location.href = '../../Login.html';} 
 
 
 emojisBtn.onclick = function() {emojisCont.style.display = 'block';}
@@ -56,8 +57,8 @@ function FetchOldMessage(user) {
             messages.forEach(message => {
                 if (message.messageContent == 'join') {CreateJoinMessage(message.messageSender, 'connected');}
                 else if (message.messageContent == 'left') {CreateJoinMessage(message.messageSender, 'disconnected');}
-                else if (message.messageSender == userData.name) {CreateUserMessage(message.messageContent, ConvertDateFormat(message.messageTimestamp));}
-                else {CreateOthersMessage(message.messageContent, message.messageSender, ConvertDateFormat(message.messageTimestamp));}
+                else if (message.messageSender == userData.name) {CreateUserMessage(message.messageContent, message.messageTimestamp);}
+                else {CreateOthersMessage(message.messageContent, message.messageSender, message.messageTimestamp);}
             });
             CreateJoinMessage(userData.name, 'connected');
             SaveJoinMessage(userData.name, 'join');
