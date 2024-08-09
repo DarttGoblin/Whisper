@@ -1,3 +1,8 @@
+#outloud {
+    font-family: var(--fontFamily);
+    font-size: 18px;
+    color: rgb(180, 180, 180);
+}
 .loadingSpan {
     font-family: var(--fontFamily);
     color: white;
@@ -193,6 +198,7 @@ body {
     .join {font-size: 10px;}
     .othersTiming {font-size: 5px; margin: 2px 0px;}
     .userTiming {font-size: 5px; margin: 2px 0px;}
+    #outloud {font-size: 14px;}
 }
 @media only screen and (max-width: 500px) {
     .gear {font-size: 40px;}
@@ -208,4 +214,5 @@ body {
     .others {margin: 3px 0px 1px 12px;}
     .othersTiming {margin-left: 12px;}
     .userTiming {margin-right: 7px;}
+    #outloud {font-size: 10px;}
 }
