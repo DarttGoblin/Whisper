@@ -21,7 +21,7 @@ register.onclick = function() {
     for (var i = 0; i < inputs.length; i++) {if (inputs[i].value == '') {DisplayError(inputs[i].id); return;}}
     if (inputs[3].value != inputs[4].value) {DisplayError('notmatched'); return;}
     if (select.value == 'Choose Gender') {DisplayError('gender'); return;}
-    if (!isValidGmail(email)) {DisplayError('emailnotvalid'); return;}
+    if (!isValidGmail(inputs[1].value)) {DisplayError('emailnotvalid'); return;}
 
     const userData = {
         name: inputs[0].value,
