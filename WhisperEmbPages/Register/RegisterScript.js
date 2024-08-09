@@ -7,7 +7,7 @@ const accessDenial = document.getElementById('accessDenial');
 for (let i = 0; i < inputs.length; i++) {inputs[i].oninput = function() {inputs[i].value = inputs[i].value.charAt(0).toLowerCase() + inputs[i].value.slice(1);}}
 inputs[1].oninput = function() {
     if (inputs[1].value == '') {inputs[1].style.borderBottom = '2px solid white';}
-    else if (isValidGmail(email)) {inputs[1].style.borderBottom = '2px solid green';} 
+    else if (isValidGmail(inputs[1].value)) {inputs[1].style.borderBottom = '2px solid green';} 
     else {inputs[1].style.borderBottom = '2px solid red';}
 }
 inputs[inputs.length - 1].oninput = function() {
