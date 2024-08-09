@@ -49,7 +49,7 @@
     border-radius: 20px;
     backdrop-filter: blur(50px);
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 #signout:active {transform: scale(0.9);}
 .navLinks {
@@ -95,7 +95,7 @@ nav {
     --fontFamily: 'Press Start 2P', cursive;
     --fontColor: rgb(116, 16, 98);
 }
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1700px) {
     #navLinksCont {display: none;}
     #setDiv {display: block;}
 }
