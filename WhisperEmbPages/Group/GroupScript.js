@@ -195,8 +195,8 @@ function SaveJoinMessage(username, state) {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {console.log(state + 'message saved!');}
-        else {console.log(state + 'message not saved!');}
+        if (data.success) {console.log(state + ' message saved!');}
+        else {console.log(state + ' message not saved!');}
     })
     .catch(error => {console.log(error);});
 }
