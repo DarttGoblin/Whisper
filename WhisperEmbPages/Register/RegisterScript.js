@@ -5,6 +5,10 @@ const haveacc = document.getElementById("haveacc");
 const accessDenial = document.getElementById('accessDenial');
 
 for (let i = 0; i < inputs.length; i++) {inputs[i].oninput = function() {inputs[i].value = inputs[i].value.charAt(0).toLowerCase() + inputs[i].value.slice(1);}}
+inputs[1].oninput = function() {
+    if (isValidGmail(email)) {inputs[1].style.borderBottom = '2px solid green';} 
+    else {inputs[1].style.borderBottom = '2px solid red';}
+}
 inputs[inputs.length - 1].oninput = function() {
     if (inputs[inputs.length - 1].value == inputs[inputs.length - 2].value) {inputs[inputs.length - 1].style.borderBottom = '2px solid green';} 
     else {inputs[inputs.length - 1].style.borderBottom = '2px solid red';}
@@ -16,6 +20,7 @@ register.onclick = function() {
     for (var i = 0; i < inputs.length; i++) {if (inputs[i].value == '') {DisplayError(inputs[i].id); return;}}
     if (inputs[3].value != inputs[4].value) {DisplayError('notmatched'); return;}
     if (select.value == 'Choose Gender') {DisplayError('gender'); return;}
+    if (!isValidGmail(email)) {DisplayError('emailnotvalid'); return;}
 
     const userData = {
         name: inputs[0].value,
@@ -53,6 +58,7 @@ register.onclick = function() {
 function DisplayError(error) {
     if (error == 'name') {AccessDenial('Name is required');}
     else if (error == 'email') {AccessDenial('Email is required');}
+    else if (error == 'emailnotvalid') {AccessDenial('Email is not valid');}
     else if (error == 'username') {AccessDenial('username is required');}
     else if (error == 'password') {AccessDenial('password is required!');}
     else if (error == 'cpassword') {AccessDenial('password confirmation<br>is required!');}
@@ -72,4 +78,8 @@ function AccessDenial(message) {
         accessDenial.style.top = "0px";
         accessDenial.innerHTML = 'Access Denied';
     }, 3000);
+}
+function isValidGmail(email) {
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    return gmailRegex.test(email);
 }
