@@ -168,7 +168,6 @@ function CreateOthersMessage(messageContent, messageSender, messageTimestamp) {
     convBody.appendChild(message);
     convBody.appendChild(timestamp);
     convBody.scrollTop = convBody.scrollHeight;
-    input.value = '';
 }
 function CreateJoinMessage(user, state) {
     const join = document.createElement('span');
