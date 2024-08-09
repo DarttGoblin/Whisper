@@ -9,6 +9,7 @@ const pages = [
     '../Profile/Profile.html',
     '../Group/Group.html',
     '../Private/Private.html',
+    '../Settings/Settings.html'
 ];
 
 ListenToWindowWidth();
@@ -18,7 +19,7 @@ darkBgNavDiv.onclick = function() {ResponseNavState('close');}
 
 for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].onclick = respNavLinks[i].onclick = function() {
-        if (i == 1 || i == 3) {alert('Service is not available yet. Check later!'); return;}
+        if (i == 1 || i == 3 || i == 4) {alert('This service is not available yet. Check later!'); return;}
         window.location.href = pages[i];
     }
 }
